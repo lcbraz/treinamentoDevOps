@@ -111,7 +111,7 @@ cd ../../tomcat
 ./bin/catalina.sh run
 ```
 
-Verifciar arquivo WAR:
+Verificar arquivo WAR:
 
 ```sh
 cd ../treinamentogit/OiGalera/
