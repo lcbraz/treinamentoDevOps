@@ -80,7 +80,8 @@ Configurar **/etc/hosts**:
 Iniciar tomcat:
 
 ```sh
-
+cd ../tomcat
+./bin/catalina.sh run
 ```
 
 Testar:
