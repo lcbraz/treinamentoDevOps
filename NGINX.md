@@ -34,13 +34,13 @@ server {
         try_files $uri $uri/ /index.html =404;
     }
 
-    location /OiGalera/ {
+    location /api/ {
         proxy_redirect      off;
         proxy_set_header    X-Real-IP $remote_addr;
         proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header    X-Forwarded-Proto $scheme;
         proxy_set_header    Host $host;
-        proxy_pass          http://localhost:8080;
+        proxy_pass          http://localhost:8080/OiGalera/;
     }
 }
 ```
@@ -100,6 +100,18 @@ openssl req \
     -x509 -days 365 -out devops.desktop.com.br.crt
 ```
 
+Parâmetros do certificado:
+
+```
+Country Name (2 letter code) [AU]:BR
+State or Province Name (full name) [Some-State]:SP
+Locality Name (eg, city) []:Sumare
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Desktop
+Organizational Unit Name (eg, section) []:TI
+Common Name (e.g. server FQDN or YOUR name) []:devops.desktop.com.br
+Email Address []:
+```
+
 
 Configurar virtualhost ssl:
 
@@ -117,11 +129,10 @@ server {
 }
 
 server {
-    listen 443;
-    listen [::]:443;
+    listen 443 ssl;
+    listen [::]:443 ssl;
     server_name devops.desktop.com.br;
 
-    ssl on;
     ssl_certificate /etc/ssl/devops.desktop.com.br.crt;
     ssl_certificate_key /etc/ssl/devops.desktop.com.br.key;
 
@@ -135,15 +146,24 @@ server {
         try_files $uri $uri/ /index.html =404;
     }
 
-    location /OiGalera/ {
+    location /api/ {
         proxy_redirect      off;
         proxy_set_header    X-Real-IP $remote_addr;
         proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header    X-Forwarded-Proto $scheme;
         proxy_set_header    Host $host;
-        proxy_pass          http://localhost:8080;
+        proxy_pass          http://localhost:8080/OiGalera/;
     }
 }
 ```
+
+Testar ssl:
+
+```sh
+curl -k https://devops.desktop.com.br
+curl -k https://devops.desktop.com.br/api/ola
+```
+
+⚠️  *-k* desativa a verificação do certificado
 
 
