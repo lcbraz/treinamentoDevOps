@@ -17,13 +17,21 @@ Conteúdo:
 apt install git
 ```
 
+Chave ssh:
+
+```sh
+ssh-keygen -t ed25519
+```
+
+⚠️  proteger a chave com senha
+
+
 Clonar conteúdo:
 
 
 ```sh
-
+git clone https://github.com/lcbraz/treinamentoDevOps.git
 ```
-
 
 
 
@@ -55,8 +63,7 @@ git add -h
 
 
 
-
-## Criar um repositório
+## Criar um repositório local
 
 
 Primeiro commit:
@@ -139,7 +146,6 @@ git commit -m"outro teste apagado"
 Renomeando arquivo:
 
 
-
 ```sh
 git mv teste.md README.md
 git status
@@ -150,18 +156,105 @@ git commit -m"renomeado README"
 
 https://bitbucket.org
 
+
+Criação:
+
+- Include a README? **No**
+- Include .gitignore? **No**
+
 - Repository settings
   - Repository details
-    - Access level:  This is a private repository
+    - Access level: ☑️  This is a private repository
   - Access keys
 
 
-## Clonar um repositório remoto
+## Subir reposittório para o Bitbucket
 
-```sh
-git clone git@bitbucket.org:treinamentodskgit/treinamentogit.git
+
+- Personal settings 
+  - SSH keys
+  - App passwords
+
+Configurar chave no ssh:
+
+```
+## Bitbucket ##
+Host bitbucket.org
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_ed25519_bitbucket
 ```
 
+```sh
+git remote add origin https://lcbraz@bitbucket.org/treinamentodskgit/treinamentogit.git
+# Ou
+git remote add origin git@bitbucket.org:treinamentodskgit/treinamentogit.git
+
+# para trocar:
+# git remote remove origin
+
+git push -u origin main
+```
+
+
+## Trabalando com branches
+
+
+```sh
+git branch
+git branch develop
+git branch
+git checkout develop
+git branch
+
+```
+
+## Java Hello World
+
+
+```java
+// Java hello world, também conhecido como Oi galera
+class OiGalera {
+    public static void main(String[] args) {
+        System.out.println("Oi galera!");
+    }
+}
+```
+
+Compilar e executar:
+
+```sh
+
+```
+
+## Enviar alterações para a repositório remoto
+
+```sh
+git status
+vim .gitignore
+
+# *.class
+
+git status
+git add .
+git status
+
+git commit -m"java hello world"
+git push --set-upstream origin develop
+# check Bitbucket
+```
+
+
+## Merge no branch main
+
+
+
+```sh
+git branch
+git checkout main
+git merge develop
+git status
+git push
+```
 
 
 
@@ -169,4 +262,6 @@ git clone git@bitbucket.org:treinamentodskgit/treinamentogit.git
 ## Referências
 
 https://git-scm.com/book/en/v2
+
 https://git-scm.com/book/pt-br/v2
+
