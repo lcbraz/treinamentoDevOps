@@ -10,7 +10,6 @@ Conteúdo:
 - Github e Bitbucket
 
 
-
 ## Instalação
 
 ```sh
@@ -32,7 +31,6 @@ Clonar conteúdo:
 ```sh
 git clone https://github.com/lcbraz/treinamentoDevOps.git
 ```
-
 
 
 ## Configuração global
@@ -211,9 +209,17 @@ git branch
 ## Java Hello World
 
 
+Instalar jdk:
+
+```sh
+apt install openjdk-18-jdk
+```
+
+
 ```java
+// Arquivo App.java
 // Java hello world, também conhecido como Oi galera
-class OiGalera {
+class App {
     public static void main(String[] args) {
         System.out.println("Oi galera!");
     }
@@ -223,7 +229,8 @@ class OiGalera {
 Compilar e executar:
 
 ```sh
-
+javac App.java
+java App
 ```
 
 ## Enviar alterações para a repositório remoto
