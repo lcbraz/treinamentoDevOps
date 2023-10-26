@@ -71,6 +71,81 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
 ```
 
 
+## Gerar imagem
+
+
+Dockerfile para configuração:
+
+```dockerfile
+FROM ubuntu:23.04
+RUN apt update
+```
+
+Criar imagem:
+
+```sh
+docker build -t tomcat-build .
+```
+
+Executar container:
+
+```sh
+docker run -v $(pwd):/root/volume -p 8080:8080 -it tomcat-build bash
+```
+
+Instalar tomcat, copiar war e iniciar o daemon:
+
+```sh
+apt update
+apt install -y wget openjdk-18-jdk
+
+wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.15/bin/apache-tomcat-10.1.15.tar.gz
+tar xvzf apache-tomcat-10.1.15.tar.gz
+mv apache-tomcat-10.1.15 tomcat
+
+cp /root/volume/OiGalera.war /tomcat/webapps
+
+/tomcat/bin/catalina.sh run
+```
+
+Salvar histórico:
+
+
+```sh
+history | sed -E 's/^ +[0-9]+ +/RUN /' > /root/volume/history.txt
+```
+
+Dockerfile com tomcat:
+
+```sh
+FROM ubuntu:23.04
+RUN apt update
+RUN apt install -y wget openjdk-18-jdk
+
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.15/bin/apache-tomcat-10.1.15.tar.gz
+RUN tar xvzf apache-tomcat-10.1.15.tar.gz
+RUN mv apache-tomcat-10.1.15 tomcat
+
+COPY OiGalera.war /tomcat/webapps
+
+CMD ["/tomcat/bin/catalina.sh", "run"]
+```
+
+Construir a imagem:
+
+```sh
+docker build -t tomcat-devops .
+```
+
+
+Rodar:
+
+```sh
+docker run -d -p 8080:8080 tomcat-devops
+```
+
+
+
 
 ## Referencias
 
