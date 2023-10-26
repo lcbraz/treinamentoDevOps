@@ -23,7 +23,7 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 useradd -m -s /bin/bash leandro
 mkdir /home/leandro/.ssh
 cat > /home/leandro/.ssh/authorized_keys <<-EOF
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIkCo4iXOb3dGpfqoizJH+m9CPNEvAXLVNozd+DUC/cQ lcbraz@gmail.com
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILKgXaN8KUOqGqcO+s+thSMXmInfsEqi55T0I4sDY/Hx leandro@macp
 EOF
 
 cat > /etc/sudoers.d/leandro <<-EOF
