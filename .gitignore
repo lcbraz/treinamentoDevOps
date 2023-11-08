@@ -5,6 +5,7 @@ treinamentogit_teste
 .vagrant
 tomcat
 opsapp
-pctgit
 treinamentoDevOps
+pctgit/id_ed25519*
+pctgit/.tmux.conf
 
