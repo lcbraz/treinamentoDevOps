@@ -3,7 +3,7 @@
 
 - [Git](GIT.md)
 - [Java](JAVA.md)
-- [JVM](JVM.md)
 - [Tomcat](TOMCAT.md)
 - [Nginx](NGINX.md)
+- [JVM](JVM.md)
 - [Containers](CONTAINERS.md)
