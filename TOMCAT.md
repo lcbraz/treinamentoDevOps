@@ -35,7 +35,7 @@ Criar estrutura de diretórios dentro do diretório do repo:
 
 ```sh
 cd treinamentogit
-mkdir -p OiGalera/WEB-INF/classes/br/com/desktop/ops/servlets
+mkdir -p OiGalera/WEB-INF/classes/br/com/desktop/ops
 ```
 
 Criar arquivo **OiGalera/WEB-INF/classes/br/com/desktop/ops** com o conteúdo:
