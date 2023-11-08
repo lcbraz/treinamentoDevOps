@@ -52,7 +52,7 @@ Compilar
 export CLASSPATH=".:./lib/*"
 javac App.java
 # Ou
-javac -cp "lib/*" App.java
+javac -cp ".:./lib/*" App.java
 java App
 ```
 
@@ -108,7 +108,7 @@ package br.com.desktop.ops;
  *
  */
 
- import org.slf4j.Logger;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class App {
@@ -215,6 +215,8 @@ java -cp target/opsapp-1.0-SNAPSHOT-jar-with-dependencies.jar br.com.desktop.ops
 ```
 
 ## Gradle
+
+🚧 Quebrado 🚧
 
 
 Instalação:
