@@ -42,8 +42,8 @@ Resposta (Response):
 - Cabeçalhos (Headers)
 - Corpo opcional (Body)
 
-**imagem response**
 
+![Response](https://github.com/lcbraz/treinamentoDevOps/blob/main/images/http_response.png?raw=true)
 
 
 ## Exemplos
