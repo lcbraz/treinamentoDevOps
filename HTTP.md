@@ -19,7 +19,7 @@
 - Versões: HTTP/1.1, HTTP/2 e HTTP/3
     - Formato do request e response não muda, somente o transporte é deferente 
 
-**imagem client - proxy - proxy - server**
+![Client Server Chain](https://github.com/lcbraz/treinamentoDevOps/blob/main/images/client-server-chain.png?raw=true)
 
 ## Requisição e Resposta
 
@@ -31,7 +31,7 @@ Requisição (Request):
 - Versão do protocolo
 - Cabeçalhos (Headers)
 
-**imagem request**
+![Request](https://github.com/lcbraz/treinamentoDevOps/blob/main/images/http_request.png?raw=true)
 
 
 Resposta (Response):
