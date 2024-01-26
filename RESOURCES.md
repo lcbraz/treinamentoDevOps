@@ -6,6 +6,14 @@
 http://144.202.34.241/DevOps.ova
 
 
+## Auth teste
+
+
+```
+curl -s http://localhost:8001/api/token -X POST -F 'username=devops' -F 'password=D3skT0p' | jq .
+```
+
+
 
 ## Install Nginx
 
